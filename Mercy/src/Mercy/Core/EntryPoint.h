@@ -6,6 +6,8 @@ extern Mercy::Application* Mercy::CreateApplication();
 
 int main( int argc, char** argv )
 {
+  Mercy::Log::Init();
+
   Mercy::Application* app = Mercy::CreateApplication();
   app->Run();
   delete app;

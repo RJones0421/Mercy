@@ -19,9 +19,15 @@
     <ClInclude Include="src\Mercy\Core\EntryPoint.h">
       <Filter>Mercy\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Mercy\Core\Log.h">
+      <Filter>Mercy\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mercy\Core\Application.cpp">
+      <Filter>Mercy\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mercy\Core\Log.cpp">
       <Filter>Mercy\Core</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,6 +13,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
+IncludeDir["spdlog"] = "Mercy/Vendor/spdlog/include"
 
 project "Mercy"
 	location "Mercy"
@@ -37,7 +38,8 @@ project "Mercy"
 	
 	includedirs
 	{
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%{IncludeDir.spdlog}"
 	}
 	
 	filter "system:windows"
@@ -82,6 +84,7 @@ project "Sandbox"
 	includedirs
 	{
 		"Mercy/src",
+		"%{IncludeDir.spdlog}"
 	}
 	
 	links
