@@ -133,6 +133,10 @@
     <ClInclude Include="src\Mercy\Core\Core.h" />
     <ClInclude Include="src\Mercy\Core\EntryPoint.h" />
     <ClInclude Include="src\Mercy\Core\Log.h" />
+    <ClInclude Include="src\Mercy\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Mercy\Events\Event.h" />
+    <ClInclude Include="src\Mercy\Events\KeyEvent.h" />
+    <ClInclude Include="src\Mercy\Events\MouseEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mercy\Core\Application.cpp" />

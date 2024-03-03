@@ -11,3 +11,5 @@
   #define MERCY_API
 #endif // ME_DYNAMIC_LINK
 #endif // ME_PLATFORM_WINDOWS
+
+#define BIT(x) ( 1 << x )

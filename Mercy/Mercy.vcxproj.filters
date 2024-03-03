@@ -7,6 +7,9 @@
     <Filter Include="Mercy\Core">
       <UniqueIdentifier>{DDBEC379-C976-05C7-327E-DE221E55A0B7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mercy\Events">
+      <UniqueIdentifier>{A9FBD0FE-955E-60A3-3EE4-98592A262C26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Mercy.h" />
@@ -21,6 +24,18 @@
     </ClInclude>
     <ClInclude Include="src\Mercy\Core\Log.h">
       <Filter>Mercy\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mercy\Events\ApplicationEvent.h">
+      <Filter>Mercy\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mercy\Events\Event.h">
+      <Filter>Mercy\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mercy\Events\KeyEvent.h">
+      <Filter>Mercy\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mercy\Events\MouseEvent.h">
+      <Filter>Mercy\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
