@@ -1,12 +1,20 @@
+#include "Mercy.h"
 
-namespace Mercy
+class Sandbox : public Mercy::Application
 {
-  void Print();
-}
+public:
+  Sandbox()
+  {
 
-int main()
+  }
+
+  ~Sandbox()
+  {
+
+  }
+};
+
+Mercy::Application* Mercy::CreateApplication()
 {
-  Mercy::Print();
-
-  return 0;
+  return new Sandbox();
 }
