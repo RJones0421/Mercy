@@ -37,6 +37,7 @@
     <ClInclude Include="src\Mercy\Events\MouseEvent.h">
       <Filter>Mercy\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\mercypch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mercy\Core\Application.cpp">
@@ -45,5 +46,6 @@
     <ClCompile Include="src\Mercy\Core\Log.cpp">
       <Filter>Mercy\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\mercypch.cpp" />
   </ItemGroup>
 </Project>

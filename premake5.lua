@@ -17,13 +17,16 @@ IncludeDir["spdlog"] = "Mercy/Vendor/spdlog/include"
 
 project "Mercy"
 	location "Mercy"
-	kind "StaticLib"
+	kind "SharedLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "on"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "mercypch.h"
+	pchsource "Mercy/src/mercypch.cpp"
 	
 	files
 	{
@@ -47,7 +50,14 @@ project "Mercy"
 		
 		defines
 		{
-			"ME_PLATFORM_WINDOWS"
+			"ME_PLATFORM_WINDOWS",
+			"ME_DYNAMIC_LINK",
+			"ME_BUILD_DLL"
+		}
+		
+		postbuildcommands
+		{
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 		
 	filter "configurations:Debug"

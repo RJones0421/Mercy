@@ -1,3 +1,4 @@
+#include "mercypch.h"
 #include "Mercy/Core/Application.h"
 #include "Mercy/Core/Log.h"
 
