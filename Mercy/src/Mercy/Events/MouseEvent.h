@@ -2,8 +2,6 @@
 
 #include "Mercy/Events/Event.h"
 
-#include <sstream>
-
 namespace Mercy
 {
   class MERCY_API MouseButtonEvent : public Event

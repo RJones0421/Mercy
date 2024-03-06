@@ -2,8 +2,6 @@
 
 #include "Mercy/Events/Event.h"
 
-#include <sstream>
-
 namespace Mercy
 {
   class MERCY_API KeyEvent : public Event
@@ -49,7 +47,7 @@ namespace Mercy
   class MERCY_API KeyReleasedEvent : public KeyEvent
   {
   public:
-    KeyReleasedEvent( int keycode, int repeatCount )
+    KeyReleasedEvent( int keycode )
       : KeyEvent( keycode )
     {
     }

@@ -1,6 +1,10 @@
 #pragma once
 
-#include "Core.h"
+#include "Mercy/Core/Core.h"
+#include "Mercy/Core/Window.h"
+
+#include "Mercy/Events/Event.h"
+#include "Mercy/Events/ApplicationEvent.h"
 
 namespace Mercy
 {
@@ -12,7 +16,12 @@ namespace Mercy
 
     void Run();
 
+    void OnEvent( Event& event );
+
   private:
+    bool OnWindowClose( WindowCloseEvent& event );
+
+    std::unique_ptr<Window> m_Window;
     bool m_Running = true;
   };
 

@@ -1,10 +1,7 @@
 #pragma once
 
+#include "mercypch.h"
 #include "Mercy/Core/Core.h"
-
-#include <functional>
-#include <ostream>
-#include <string>
 
 namespace Mercy
 {

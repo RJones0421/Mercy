@@ -10,6 +10,12 @@
     <Filter Include="Mercy\Events">
       <UniqueIdentifier>{A9FBD0FE-955E-60A3-3EE4-98592A262C26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Mercy.h" />
@@ -25,6 +31,9 @@
     <ClInclude Include="src\Mercy\Core\Log.h">
       <Filter>Mercy\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Mercy\Core\Window.h">
+      <Filter>Mercy\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Mercy\Events\ApplicationEvent.h">
       <Filter>Mercy\Events</Filter>
     </ClInclude>
@@ -37,6 +46,9 @@
     <ClInclude Include="src\Mercy\Events\MouseEvent.h">
       <Filter>Mercy\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\mercypch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +57,9 @@
     </ClCompile>
     <ClCompile Include="src\Mercy\Core\Log.cpp">
       <Filter>Mercy\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mercypch.cpp" />
   </ItemGroup>

@@ -23,7 +23,7 @@ project "Mercy"
 	kind "SharedLib"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -51,7 +51,8 @@ project "Mercy"
 	
 	links
 	{
-		"GLFW"
+		"GLFW",
+		"opengl32.lib"
 	}
 	
 	filter "system:windows"
@@ -61,8 +62,7 @@ project "Mercy"
 		{
 			"ME_PLATFORM_WINDOWS",
 			"ME_DYNAMIC_LINK",
-			"ME_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
+			"ME_BUILD_DLL"
 		}
 		
 		postbuildcommands
@@ -90,7 +90,7 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")

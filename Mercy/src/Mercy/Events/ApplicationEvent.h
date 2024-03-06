@@ -2,14 +2,13 @@
 
 #include "Mercy/Events/Event.h"
 
-#include <sstream>
-
 namespace Mercy
 {
   // Window events
 
   class MERCY_API WindowCloseEvent : public Event
   {
+  public:
     WindowCloseEvent() { }
 
     EVENT_CLASS_TYPE( WindowClose );

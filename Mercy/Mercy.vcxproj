@@ -79,16 +79,17 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>mercypch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ME_PLATFORM_WINDOWS;ME_DYNAMIC_LINK;ME_BUILD_DLL;GLFW_INCLUDE_NONE;ME_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ME_PLATFORM_WINDOWS;ME_DYNAMIC_LINK;ME_BUILD_DLL;ME_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\GLFW\include;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Mercy\Mercy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -100,20 +101,21 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>mercypch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ME_PLATFORM_WINDOWS;ME_DYNAMIC_LINK;ME_BUILD_DLL;GLFW_INCLUDE_NONE;ME_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ME_PLATFORM_WINDOWS;ME_DYNAMIC_LINK;ME_BUILD_DLL;ME_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\GLFW\include;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\Mercy\Mercy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -125,20 +127,21 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>mercypch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ME_PLATFORM_WINDOWS;ME_DYNAMIC_LINK;ME_BUILD_DLL;GLFW_INCLUDE_NONE;ME_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ME_PLATFORM_WINDOWS;ME_DYNAMIC_LINK;ME_BUILD_DLL;ME_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\GLFW\include;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist-windows-x86_64\Mercy\Mercy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -151,15 +154,18 @@
     <ClInclude Include="src\Mercy\Core\Core.h" />
     <ClInclude Include="src\Mercy\Core\EntryPoint.h" />
     <ClInclude Include="src\Mercy\Core\Log.h" />
+    <ClInclude Include="src\Mercy\Core\Window.h" />
     <ClInclude Include="src\Mercy\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Mercy\Events\Event.h" />
     <ClInclude Include="src\Mercy\Events\KeyEvent.h" />
     <ClInclude Include="src\Mercy\Events\MouseEvent.h" />
+    <ClInclude Include="src\Platform\Windows\WWindow.h" />
     <ClInclude Include="src\mercypch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mercy\Core\Application.cpp" />
     <ClCompile Include="src\Mercy\Core\Log.cpp" />
+    <ClCompile Include="src\Platform\Windows\WWindow.cpp" />
     <ClCompile Include="src\mercypch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
