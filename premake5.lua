@@ -1,5 +1,4 @@
 workspace "Mercy"
-	architecture "x86_64"
 	startproject "Sandbox"
 	
 	configurations
@@ -23,6 +22,7 @@ project "Mercy"
 	kind "SharedLib"
 	language "C++"
 	cppdialect "C++17"
+	architecture "x86_64"
 	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -67,6 +67,7 @@ project "Mercy"
 		
 		postbuildcommands
 		{
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/MercyEditor/\""),
 			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 		
@@ -90,6 +91,7 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
+	architecture "x86_64"
 	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -134,3 +136,29 @@ project "Sandbox"
 		defines "ME_DIST"
 		runtime "Release"
 		optimize "on"
+
+project "MercyEditor"
+	location "MercyEditor"
+	kind "WindowedApp"
+	language "C#"
+
+	dotnetframework "net8.0-windows"
+
+	targetdir ("bin/" .. outputdir .. "x86_64/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "x86_64/%{prj.name}")
+
+	flags
+	{
+		"WPF"
+	}
+
+	files
+	{
+		"%{prj.name}/*.cs",
+	}
+
+	links
+	{
+		"Mercy",
+		"Sandbox"
+	}

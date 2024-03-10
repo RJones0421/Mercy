@@ -1,6 +1,7 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
+	architecture "x86_64"
 	staticruntime "on"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")

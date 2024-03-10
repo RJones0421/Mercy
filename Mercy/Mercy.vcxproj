@@ -26,19 +26,19 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -85,6 +85,7 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -93,7 +94,8 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Mercy\Mercy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll "..\bin\Debug-windows-x86_64\MercyEditor\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll "..\bin\Debug-windows-x86_64\MercyEditor\" &gt; nul)
+IF EXIST ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Mercy\Mercy.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -110,6 +112,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -119,7 +122,8 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Mercy\Mercy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Mercy\Mercy.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Mercy\Mercy.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Mercy\Mercy.dll "..\bin\Release-windows-x86_64\MercyEditor\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Mercy\Mercy.dll "..\bin\Release-windows-x86_64\MercyEditor\" &gt; nul)
+IF EXIST ..\bin\Release-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Mercy\Mercy.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Mercy\Mercy.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -136,6 +140,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -145,7 +150,8 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Mercy\Mercy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll "..\bin\Dist-windows-x86_64\MercyEditor\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll "..\bin\Dist-windows-x86_64\MercyEditor\" &gt; nul)
+IF EXIST ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
