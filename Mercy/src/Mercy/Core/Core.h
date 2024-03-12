@@ -25,3 +25,4 @@
 #define ME_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
 
 #pragma warning( disable: 4251 ) // Disables STL dll export warnings
+#pragma warning( disable: 4996 ) // Disables STL dll export warnings

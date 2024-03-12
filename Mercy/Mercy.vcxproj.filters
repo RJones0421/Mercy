@@ -50,6 +50,8 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\mercypch.h" />
+    <ClInclude Include="src\Mercy\Layers\Layer.h" />
+    <ClInclude Include="src\Mercy\Layers\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mercy\Core\Application.cpp">
@@ -62,5 +64,7 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mercypch.cpp" />
+    <ClCompile Include="src\Mercy\Layers\Layer.cpp" />
+    <ClCompile Include="src\Mercy\Layers\LayerStack.cpp" />
   </ItemGroup>
 </Project>

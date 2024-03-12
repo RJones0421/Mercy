@@ -19,8 +19,24 @@ void Mercy::Application::Run()
   {
     glClearColor( 1, 1, 0, 1 );
     glClear( GL_COLOR_BUFFER_BIT );
+
+    for ( Layer* layer : m_LayerStack )
+    {
+      layer->OnUpdate();
+    }
+
     m_Window->OnUpdate();
   }
+}
+
+void Mercy::Application::PushLayer( Layer* layer )
+{
+  m_LayerStack.PushLayer( layer );
+}
+
+void Mercy::Application::PushOverlay( Layer* overlay )
+{
+  m_LayerStack.PushLayer( overlay );
 }
 
 void Mercy::Application::OnEvent( Event& event )
@@ -28,7 +44,14 @@ void Mercy::Application::OnEvent( Event& event )
   EventDispatcher dispatcher( event );
   dispatcher.Dispatch<WindowCloseEvent>( ME_BIND_EVENT_FN( Application::OnWindowClose ) );
 
-  ME_CORE_TRACE( "{0}", event );
+  for ( auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+  {
+    ( *--it )->OnEvent( event );
+    if ( event.Handled )
+    {
+      break;
+    }
+  }
 }
 
 bool Mercy::Application::OnWindowClose( WindowCloseEvent& event )
