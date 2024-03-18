@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLFW", "Mercy\Vendor\GLFW\GLFW.vcxproj", "{154B857C-0182-860D-AA6E-6C109684020F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Glad", "Mercy\Vendor\Glad\Glad.vcxproj", "{BDD6857C-A90D-870D-52FA-6C103E10030F}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mercy", "Mercy\Mercy.vcxproj", "{65B3A90D-D1C7-D1BE-9A49-751E061DCEEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercyEditor", "MercyEditor\MercyEditor.csproj", "{EC00DFE7-58B6-57DD-E1AA-51B44D5F4EE1}"
@@ -28,6 +30,12 @@ Global
 		{154B857C-0182-860D-AA6E-6C109684020F}.Dist|Mixed Platforms.Build.0 = Dist|x64
 		{154B857C-0182-860D-AA6E-6C109684020F}.Release|Mixed Platforms.ActiveCfg = Release|x64
 		{154B857C-0182-860D-AA6E-6C109684020F}.Release|Mixed Platforms.Build.0 = Release|x64
+		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Dist|Mixed Platforms.ActiveCfg = Dist|x64
+		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Dist|Mixed Platforms.Build.0 = Dist|x64
+		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Release|Mixed Platforms.Build.0 = Release|x64
 		{65B3A90D-D1C7-D1BE-9A49-751E061DCEEF}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
 		{65B3A90D-D1C7-D1BE-9A49-751E061DCEEF}.Debug|Mixed Platforms.Build.0 = Debug|x64
 		{65B3A90D-D1C7-D1BE-9A49-751E061DCEEF}.Dist|Mixed Platforms.ActiveCfg = Dist|x64

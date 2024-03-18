@@ -1,7 +1,7 @@
 #include "mercypch.h"
 #include "Mercy/Core/Application.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 Mercy::Application::Application()
 {

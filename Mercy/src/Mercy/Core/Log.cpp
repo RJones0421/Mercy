@@ -1,5 +1,5 @@
 #include "mercypch.h"
-#include "Log.h"
+#include "Mercy/Core/Log.h"
 #include <spdlog/sinks/stdout_color_sinks.h>
 
 std::shared_ptr<spdlog::logger> Mercy::Log::s_CoreLogger;

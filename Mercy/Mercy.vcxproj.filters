@@ -10,6 +10,9 @@
     <Filter Include="Mercy\Events">
       <UniqueIdentifier>{A9FBD0FE-955E-60A3-3EE4-98592A262C26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mercy\Layers">
+      <UniqueIdentifier>{84E6B30D-7049-43B2-19CF-7B6805110F35}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
@@ -46,12 +49,16 @@
     <ClInclude Include="src\Mercy\Events\MouseEvent.h">
       <Filter>Mercy\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Mercy\Layers\Layer.h">
+      <Filter>Mercy\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mercy\Layers\LayerStack.h">
+      <Filter>Mercy\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\mercypch.h" />
-    <ClInclude Include="src\Mercy\Layers\Layer.h" />
-    <ClInclude Include="src\Mercy\Layers\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mercy\Core\Application.cpp">
@@ -60,11 +67,15 @@
     <ClCompile Include="src\Mercy\Core\Log.cpp">
       <Filter>Mercy\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Mercy\Layers\Layer.cpp">
+      <Filter>Mercy\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mercy\Layers\LayerStack.cpp">
+      <Filter>Mercy\Layers</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mercypch.cpp" />
-    <ClCompile Include="src\Mercy\Layers\Layer.cpp" />
-    <ClCompile Include="src\Mercy\Layers\LayerStack.cpp" />
   </ItemGroup>
 </Project>

@@ -12,9 +12,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
+IncludeDir["Glad"] = "Mercy/Vendor/Glad/include"
 IncludeDir["GLFW"] = "Mercy/Vendor/GLFW/include"
 IncludeDir["spdlog"] = "Mercy/Vendor/spdlog/include"
 
+include "Mercy/Vendor/Glad"
 include "Mercy/Vendor/GLFW"
 
 project "Mercy"
@@ -45,12 +47,14 @@ project "Mercy"
 	includedirs
 	{
 		"%{prj.name}/src",
+		"%{IncludeDir.Glad}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.spdlog}"
 	}
 	
 	links
 	{
+		"Glad",
 		"GLFW",
 		"opengl32.lib"
 	}
@@ -62,7 +66,8 @@ project "Mercy"
 		{
 			"ME_PLATFORM_WINDOWS",
 			"ME_DYNAMIC_LINK",
-			"ME_BUILD_DLL"
+			"ME_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 		
 		postbuildcommands
