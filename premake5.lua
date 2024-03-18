@@ -14,6 +14,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["Glad"] = "Mercy/Vendor/Glad/include"
 IncludeDir["GLFW"] = "Mercy/Vendor/GLFW/include"
+IncludeDir["glm"] = "Mercy/Vendor/glm"
 IncludeDir["spdlog"] = "Mercy/Vendor/spdlog/include"
 
 include "Mercy/Vendor/Glad"
@@ -37,6 +38,8 @@ project "Mercy"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/Vendor/glm/**.hpp",
+		"%{prj.name}/Vendor/glm/**.inl"
 	}
 	
 	defines
@@ -49,6 +52,7 @@ project "Mercy"
 		"%{prj.name}/src",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.spdlog}"
 	}
 	
@@ -111,6 +115,7 @@ project "Sandbox"
 	includedirs
 	{
 		"Mercy/src",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.spdlog}"
 	}
 	
