@@ -11,6 +11,9 @@ namespace Mercy
 {
   class MERCY_API Application
   {
+  private:
+    static Application* s_Instance;
+
   public:
     Application();
     virtual ~Application();
@@ -21,6 +24,10 @@ namespace Mercy
 
     void PushLayer( Layer* layer );
     void PushOverlay( Layer* overlay );
+
+    inline Window& GetWindow() { return *m_Window; }
+
+    inline static Application& Get() { return *s_Instance; }
 
   private:
     bool OnWindowClose( WindowCloseEvent& event );

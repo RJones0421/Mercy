@@ -59,6 +59,8 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\mercypch.h" />
+    <ClInclude Include="src\Platform\Windows\WInput.h" />
+    <ClInclude Include="src\Mercy\Core\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mercy\Core\Application.cpp">
@@ -77,5 +79,6 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mercypch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WInput.cpp" />
   </ItemGroup>
 </Project>

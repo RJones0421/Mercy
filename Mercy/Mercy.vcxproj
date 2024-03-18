@@ -159,6 +159,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\D
     <ClInclude Include="src\Mercy\Core\Application.h" />
     <ClInclude Include="src\Mercy\Core\Core.h" />
     <ClInclude Include="src\Mercy\Core\EntryPoint.h" />
+    <ClInclude Include="src\Mercy\Core\Input.h" />
     <ClInclude Include="src\Mercy\Core\Log.h" />
     <ClInclude Include="src\Mercy\Core\Window.h" />
     <ClInclude Include="src\Mercy\Events\ApplicationEvent.h" />
@@ -167,6 +168,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\D
     <ClInclude Include="src\Mercy\Events\MouseEvent.h" />
     <ClInclude Include="src\Mercy\Layers\Layer.h" />
     <ClInclude Include="src\Mercy\Layers\LayerStack.h" />
+    <ClInclude Include="src\Platform\Windows\WInput.h" />
     <ClInclude Include="src\Platform\Windows\WWindow.h" />
     <ClInclude Include="src\mercypch.h" />
   </ItemGroup>
@@ -175,6 +177,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\Mercy\Mercy.dll\ (xcopy /Q /E /Y /I ..\bin\D
     <ClCompile Include="src\Mercy\Core\Log.cpp" />
     <ClCompile Include="src\Mercy\Layers\Layer.cpp" />
     <ClCompile Include="src\Mercy\Layers\LayerStack.cpp" />
+    <ClCompile Include="src\Platform\Windows\WInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WWindow.cpp" />
     <ClCompile Include="src\mercypch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

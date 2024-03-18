@@ -3,6 +3,8 @@
 
 #include <glad/glad.h>
 
+Mercy::Application* Mercy::Application::s_Instance = nullptr;
+
 Mercy::Application::Application()
 {
   m_Window = std::unique_ptr<Window>( Window::Create() );
