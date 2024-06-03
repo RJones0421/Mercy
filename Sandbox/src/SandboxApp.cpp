@@ -37,5 +37,7 @@ public:
 
 Mercy::Application* Mercy::CreateApplication()
 {
+  ME_INFO( "Application created" );
+
   return new Sandbox();
 }

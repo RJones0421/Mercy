@@ -129,7 +129,8 @@ project "Sandbox"
 		
 		defines
 		{
-			"ME_PLATFORM_WINDOWS"
+			"ME_PLATFORM_WINDOWS",
+			"ME_DYNAMIC_LINK"
 		}
 		
 	filter "configurations:Debug"
