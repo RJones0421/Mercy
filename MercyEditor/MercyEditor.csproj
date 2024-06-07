@@ -55,6 +55,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Explorer\CreateProjectView.xaml.cs" />
+    <Compile Include="Explorer\OpenProjectView.xaml.cs" />
+    <Compile Include="Explorer\ProjectBrowserDialog.xaml.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -69,5 +72,8 @@
       <Project>{F4C124E3-60A1-A37E-69B9-2E55D5170AE0}</Project>
       <Name>Sandbox</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Editor\" />
   </ItemGroup>
 </Project>
