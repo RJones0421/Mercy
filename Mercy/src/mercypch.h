@@ -15,6 +15,6 @@
 
 #include "Mercy/Core/Log.h"
 
-#ifdef HZ_PLATFORM_WINDOWS
+#ifdef ME_PLATFORM_WINDOWS
 #include <Windows.h>
-#endif // HZ_PLATFORM_WINDOWS
+#endif // ME_PLATFORM_WINDOWS

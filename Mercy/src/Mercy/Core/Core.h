@@ -18,7 +18,7 @@
 #else
   #define ME_ASSERT( x, ... )
   #define ME_CORE_ASSERT( x, ... )
-#endif // HZ_ENABLE_ASSERTS
+#endif // ME_ENABLE_ASSERTS
 
 #define BIT(x) ( 1 << x )
 

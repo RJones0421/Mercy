@@ -55,25 +55,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Explorer\CreateProjectView.xaml.cs" />
-    <Compile Include="Explorer\OpenProjectView.xaml.cs" />
-    <Compile Include="Explorer\ProjectBrowserDialog.xaml.cs" />
+    <Compile Include="Common\ViewModelBase.cs" />
+    <Compile Include="Explorer\CreateProjectView.xaml.cs">
+      <DependentUpon>CreateProjectView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Explorer\NewProject.cs" />
+    <Compile Include="Explorer\OpenProjectView.xaml.cs">
+      <DependentUpon>OpenProjectView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Explorer\ProjectBrowserDialog.xaml.cs">
+      <DependentUpon>ProjectBrowserDialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Mercy\Mercy.vcxproj">
-      <Project>{65B3A90D-D1C7-D1BE-9A49-751E061DCEEF}</Project>
-      <Name>Mercy</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sandbox\Sandbox.vcxproj">
-      <Project>{F4C124E3-60A1-A37E-69B9-2E55D5170AE0}</Project>
-      <Name>Sandbox</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Editor\" />
+    <Compile Include="Utilities\Serializer.cs" />
   </ItemGroup>
 </Project>

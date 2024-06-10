@@ -165,11 +165,16 @@ project "MercyEditor"
 
 	files
 	{
-		"%{prj.name}/*.cs",
+		"%{prj.name}/**.cs",
 	}
 
-	links
+	removefiles
 	{
-		"Mercy",
-		"Sandbox"
+		"%{prj.name}/obj/**",
 	}
+
+	--links
+	--{
+	--	"Mercy",
+	--	"Sandbox"
+	--}
