@@ -24,5 +24,24 @@ namespace MercyEditor.Explorer
     {
       InitializeComponent();
     }
+
+    private void OnCreate_Button_Click( object sender, RoutedEventArgs e )
+    {
+      // Create the project
+      NewProject viewModel = DataContext as NewProject;
+      string projectPath = viewModel.CreateProject( templateListBox.SelectedItem as ProjectTemplate );
+
+      // Verify successful creation
+      bool dialogResult = false;
+      Window window = Window.GetWindow( this );
+      if ( !string.IsNullOrEmpty( projectPath ) )
+      {
+        dialogResult = true;
+      }
+
+      // Close if created
+      window.DialogResult = dialogResult;
+      window.Close();
+    }
   }
 }
