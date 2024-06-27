@@ -63,6 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Explorer\NewProject.cs" />
+    <Compile Include="Explorer\OpenProject.cs" />
     <Compile Include="Explorer\OpenProjectView.xaml.cs">
       <DependentUpon>OpenProjectView.xaml</DependentUpon>
       <SubType>Code</SubType>

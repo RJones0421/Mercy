@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MercyEditor.Editor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,9 @@ namespace MercyEditor.Explorer
       if ( !string.IsNullOrEmpty( projectPath ) )
       {
         dialogResult = true;
+        Project project = OpenProject.Open( new ProjectData() { ProjectName = viewModel.ProjectName,
+                                                                ProjectPath = $@"{viewModel.ProjectPath}{viewModel.ProjectName}\" } );
+        window.DataContext = project;
       }
 
       // Close if created

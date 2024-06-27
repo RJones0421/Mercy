@@ -1,5 +1,7 @@
-﻿using MercyEditor.Explorer;
+﻿using MercyEditor.Editor;
+using MercyEditor.Explorer;
 using System;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +25,8 @@ namespace MercyEditor
       InitializeComponent();
 
       Loaded += OnMainWindowLoaded;
+
+      Closing += OnMainWindowClosing;
     }
 
     private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
@@ -32,17 +36,27 @@ namespace MercyEditor
       OpenProjectBrowserDialog();
     }
 
+    private void OnMainWindowClosing( object sender, CancelEventArgs e )
+    {
+      Closing -= OnMainWindowClosing;
+      Project.Current?.Unload();
+    }
+
     private void OpenProjectBrowserDialog()
     {
       var projectBrowser = new ProjectBrowserDialog();
 
-      if ( projectBrowser.ShowDialog() == false )
+      if ( projectBrowser.ShowDialog() == false || projectBrowser.DataContext == null )
       {
         Application.Current.Shutdown();
       }
       else
       {
+        // Unload if switching projects
+        Project.Current?.Unload();
+
         // Open the project
+        DataContext = projectBrowser.DataContext;
       }
     }
   }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MercyEditor.Editor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,35 @@ namespace MercyEditor.Explorer
     public OpenProjectView()
     {
       InitializeComponent();
+    }
+
+    private void OnOpen_Button_Click( object sender, RoutedEventArgs e )
+    {
+      OpenSelectedProject();
+    }
+
+    private void OnListBoxItem_Mouse_DoubleClick(  object sender, MouseButtonEventArgs e )
+    {
+      OpenSelectedProject();
+    }
+
+    private void OpenSelectedProject()
+    {
+      // Open the project
+      Project project = OpenProject.Open( projectsListBox.SelectedItem as ProjectData );
+
+      // Verify project exists
+      bool dialogResult = false;
+      Window window = Window.GetWindow( this );
+      if ( project != null )
+      {
+        dialogResult = true;
+        window.DataContext = project;
+      }
+
+      // Close if found
+      window.DialogResult = dialogResult;
+      window.Close();
     }
   }
 }

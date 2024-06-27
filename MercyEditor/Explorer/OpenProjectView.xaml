@@ -5,19 +5,47 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MercyEditor.Explorer"
              mc:Ignorable="d" Width="800"
+             d:DataContext="{d:DesignInstance Type=local:OpenProject, IsDesignTimeCreatable=True}"
              d:DesignHeight="450" d:DesignWidth="800">
+  <UserControl.DataContext>
+    <local:OpenProject/>
+  </UserControl.DataContext>
   <StackPanel Background="White">
 
+    <!-- Project list display -->
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-      <ListBox Width="195" Height="250" />
-      <Border Width="400" Height="250" Margin="5,0"/>
+      <ListBox Width="195" Height="250" ItemsSource="{Binding Projects}"
+               x:Name="projectsListBox" SelectedIndex="0">
+        <!-- Double click handler -->
+        <ListBox.ItemContainerStyle>
+          <Style TargetType="ListBoxItem">
+            <EventSetter Event="MouseDoubleClick" Handler="OnListBoxItem_Mouse_DoubleClick" />
+          </Style>
+        </ListBox.ItemContainerStyle>
+        <!-- Text -->
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel Orientation="Horizontal">
+              <Image Source="{Binding Icon}" Margin="0,0,5,5"
+             Height="25" Width="25" />
+              <TextBlock Text="{Binding ProjectName}" />
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <!-- Screenshot -->
+      <Border Width="400" Height="250" Margin="5,0">
+        <Border.Background>
+          <ImageBrush ImageSource="{Binding Path=SelectedItem.Screenshot, ElementName=projectsListBox}" />
+        </Border.Background>
+      </Border>
     </StackPanel>
 
     <!-- Confirmation buttons -->
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
               Margin="0,30,0,0" >
       <Button Content="Open" Width="96" Margin="15,0"
-            IsDefault="True" />
+            IsDefault="True" Click="OnOpen_Button_Click" />
       <Button Content="Exit" Width="96" Margin="15,0"
             IsCancel="True" />
     </StackPanel>
