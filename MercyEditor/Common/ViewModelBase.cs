@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MercyEditor.Common
+namespace MercyEditor
 {
   [DataContract( IsReference = true )]
   internal class ViewModelBase : INotifyPropertyChanged

@@ -1,5 +1,4 @@
-﻿using MercyEditor.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MercyEditor.Editor
+namespace MercyEditor.Editors
 {
   [DataContract]
   internal class Scene : ViewModelBase

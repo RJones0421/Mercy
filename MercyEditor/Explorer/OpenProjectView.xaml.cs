@@ -1,4 +1,4 @@
-﻿using MercyEditor.Editor;
+﻿using MercyEditor.Editors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +24,12 @@ namespace MercyEditor.Explorer
     public OpenProjectView()
     {
       InitializeComponent();
+
+      Loaded += ( sender, e ) =>
+      {
+        ListBoxItem item = projectsListBox.ItemContainerGenerator.ContainerFromIndex( projectsListBox.SelectedIndex ) as ListBoxItem;
+        item?.Focus();
+      };
     }
 
     private void OnOpen_Button_Click( object sender, RoutedEventArgs e )

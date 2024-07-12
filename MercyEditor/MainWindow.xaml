@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MercyEditor"
+        xmlns:editors="clr-namespace:MercyEditor.Editors"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Mercy Editor" Height="450" Width="800">
+        Title="Mercy Editor" Height="1080" Width="1920">
     <Grid>
-
+      <editors:WorldEditorView />
     </Grid>
 </Window>

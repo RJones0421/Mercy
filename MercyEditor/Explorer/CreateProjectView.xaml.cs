@@ -1,4 +1,4 @@
-﻿using MercyEditor.Editor;
+﻿using MercyEditor.Editors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +26,11 @@ namespace MercyEditor.Explorer
       InitializeComponent();
     }
 
+    private void OnBrowse_Button_Click( object sender, RoutedEventArgs e )
+    {
+      // TODO: Add folder browsing
+    }
+
     private void OnCreate_Button_Click( object sender, RoutedEventArgs e )
     {
       // Create the project
@@ -38,8 +43,11 @@ namespace MercyEditor.Explorer
       if ( !string.IsNullOrEmpty( projectPath ) )
       {
         dialogResult = true;
-        Project project = OpenProject.Open( new ProjectData() { ProjectName = viewModel.ProjectName,
-                                                                ProjectPath = $@"{viewModel.ProjectPath}{viewModel.ProjectName}\" } );
+        Project project = OpenProject.Open( new ProjectData()
+        {
+          ProjectName = viewModel.ProjectName,
+          ProjectPath = $@"{viewModel.ProjectPath}{viewModel.ProjectName}\"
+        } );
         window.DataContext = project;
       }
 

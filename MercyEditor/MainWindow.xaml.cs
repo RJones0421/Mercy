@@ -1,4 +1,4 @@
-﻿using MercyEditor.Editor;
+﻿using MercyEditor.Editors;
 using MercyEditor.Explorer;
 using System;
 using System.ComponentModel;

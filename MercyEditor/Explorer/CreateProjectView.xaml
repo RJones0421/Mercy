@@ -50,7 +50,8 @@
       <Border BorderThickness="1" BorderBrush="DarkGray" >
         <TextBlock Width="500" Text="{Binding ProjectPath}" />
       </Border>
-      <Button Content="Browse" Width="45" Margin="5,0,0,0" />
+      <Button Content="Browse" Width="45" Margin="5,0,0,0"
+              Click="OnBrowse_Button_Click" />
     </StackPanel>
     
     <!-- Confirmation buttons -->

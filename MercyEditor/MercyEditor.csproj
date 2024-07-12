@@ -55,9 +55,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\ViewModelBase.cs" />
-    <Compile Include="Editor\Project.cs" />
-    <Compile Include="Editor\Scene.cs" />
+    <Compile Include="Editors\Project.cs" />
+    <Compile Include="Editors\Scene.cs" />
+    <Compile Include="Editors\WorldEditor\ProjectLayoutView.xaml.cs" />
+    <Compile Include="Editors\WorldEditor\WorldEditorView.xaml.cs" />
     <Compile Include="Explorer\CreateProjectView.xaml.cs">
       <DependentUpon>CreateProjectView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -77,5 +80,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utilities\Serializer.cs" />
+    <Compile Include="Utilities\UndoRedo.cs" />
+    <Compile Include="Utilities\UndoRedoView.xaml.cs" />
   </ItemGroup>
 </Project>
