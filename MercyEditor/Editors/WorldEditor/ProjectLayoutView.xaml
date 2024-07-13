@@ -16,7 +16,7 @@
     <!-- Toolbar -->
     <Button Content="Add Scene" Width="96" Grid.Row="0"
             VerticalAlignment="Center" HorizontalAlignment="Left"
-            Command="{Binding AddScene}" Margin="10, 0" />
+            Command="{Binding AddSceneCommand}" Margin="10, 0" />
 
     <!-- Scene tree view -->
     <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto"
@@ -37,7 +37,7 @@
                   <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{Binding Name}" />
                     <Button Content="Remove"
-                            Command="{Binding DataContext.RemoveScene, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            Command="{Binding DataContext.RemoveSceneCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                             CommandParameter="{Binding}" Margin="20, 0" Focusable="False"/>
                   </StackPanel>
                 </Grid>

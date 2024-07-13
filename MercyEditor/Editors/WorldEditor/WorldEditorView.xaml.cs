@@ -23,6 +23,14 @@ namespace MercyEditor.Editors
     public WorldEditorView()
     {
       InitializeComponent();
+
+      Loaded += OnWorldEditorViewLoaded;
+    }
+
+    private void OnWorldEditorViewLoaded( object sender, RoutedEventArgs e )
+    {
+      Loaded -= OnWorldEditorViewLoaded;
+      Focus();
     }
   }
 }
