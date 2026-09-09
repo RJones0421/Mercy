@@ -1,3 +1,5 @@
+# I have restarted the making of this engine, these are the old files to serve as a reference
+
 # Mercy
 Mercy is my custom 3D game engine. This engine is not meant to be used to make games; the purpose of this engine is to deepen my knowledge of game development and game engines through building one from the ground up.
 
