@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36804.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercyEditor", "MercyEditor\MercyEditor.csproj", "{06AF3C45-E218-49A0-895F-7CD8E01249CD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{0DEFFE41-6061-425D-A14C-8FB4BDE9BAA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DEFFE41-6061-425D-A14C-8FB4BDE9BAA7}.Debug|x64.ActiveCfg = Debug|x64
+		{0DEFFE41-6061-425D-A14C-8FB4BDE9BAA7}.Debug|x64.Build.0 = Debug|x64
+		{0DEFFE41-6061-425D-A14C-8FB4BDE9BAA7}.Release|x64.ActiveCfg = Release|x64
+		{0DEFFE41-6061-425D-A14C-8FB4BDE9BAA7}.Release|x64.Build.0 = Release|x64
+		{06AF3C45-E218-49A0-895F-7CD8E01249CD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{06AF3C45-E218-49A0-895F-7CD8E01249CD}.Debug|x64.Build.0 = Debug|Any CPU
+		{06AF3C45-E218-49A0-895F-7CD8E01249CD}.Release|x64.ActiveCfg = Release|Any CPU
+		{06AF3C45-E218-49A0-895F-7CD8E01249CD}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99E8F4BE-C1C1-46B3-8D98-46F06FFF5831}
+	EndGlobalSection
+EndGlobal
