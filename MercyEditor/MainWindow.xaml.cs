@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using MercyEditor.GameProject;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,27 @@ namespace MercyEditor
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += OnMainWindowLoaded;
+        }
+
+        private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
+        {
+            Loaded -= OnMainWindowLoaded;
+            OpenProjectBrowserDialog();
+        }
+
+        private void OpenProjectBrowserDialog()
+        {
+            ProjectBrowserDialog projectBrowser = new ProjectBrowserDialog();
+            if (projectBrowser.ShowDialog() == false)
+            {
+                Application.Current.Shutdown();
+            }
+            else
+            {
+
+            }
         }
     }
 }
