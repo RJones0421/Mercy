@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Notifying property</Title>
+      <Shortcut>pprop</Shortcut>
+      <Description>Backing field and property that raises OnPropertyChanged when the value changes.</Description>
+      <Author>Mercy</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>Property type</ToolTip>
+          <Default>bool</Default>
+        </Literal>
+        <Literal>
+          <ID>property</ID>
+          <ToolTip>Property name</ToolTip>
+          <Default>MyProperty</Default>
+        </Literal>
+        <Literal>
+          <ID>field</ID>
+          <ToolTip>Backing field name, without the leading underscore</ToolTip>
+          <Default>myProperty</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[private $type$ _$field$;
+public $type$ $property$
+{
+    get => _$field$;
+    set
+    {
+        if (_$field$ != value)
+        {
+            _$field$ = value;
+            OnPropertyChanged(nameof($property$));
+        }
+    }
+}$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

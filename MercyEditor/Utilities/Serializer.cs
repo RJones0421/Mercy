@@ -19,9 +19,9 @@ public static class Serializer
             DataContractSerializer serializer = new DataContractSerializer(typeof(T));
             serializer.WriteObject(fs, instance);
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Debug.WriteLine(e.Message);
+            Debug.WriteLine(ex.Message);
             // TODO: properly log error
         }
     }
@@ -35,9 +35,9 @@ public static class Serializer
             T? instance = (T?)serializer.ReadObject(fs);
             return instance;
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Debug.WriteLine(e.Message);
+            Debug.WriteLine(ex.Message);
             // TODO: properly log error
             return default(T);
         }
