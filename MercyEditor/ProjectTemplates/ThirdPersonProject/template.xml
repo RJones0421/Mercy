@@ -1,4 +1,4 @@
-<ProjectTemplate xmlns="http://schemas.datacontract.org/2004/07/MercyEditor.GameProject" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+<ProjectTemplate xmlns="http://schemas.datacontract.org/2004/07/MercyEditor.ProjectBrowser" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
 	<Folders xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 		<a:string>.Mercy</a:string>
 		<a:string>Content</a:string>

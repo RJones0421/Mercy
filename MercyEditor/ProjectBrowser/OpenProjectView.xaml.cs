@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MercyEditor.GameProject;
+namespace MercyEditor.ProjectBrowser;
 
 /// <summary>
 /// Interaction logic for OpenProjectView.xaml

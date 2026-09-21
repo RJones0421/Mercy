@@ -1,4 +1,4 @@
-﻿using MercyEditor.GameProject;
+﻿using MercyEditor.ProjectBrowser;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;

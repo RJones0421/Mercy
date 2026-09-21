@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MercyEditor.GameProject;
+namespace MercyEditor.ProjectBrowser;
 
 /// <summary>
 /// Interaction logic for ProjectBrowserDialog.xaml
@@ -47,4 +47,4 @@ public partial class ProjectBrowserDialog : Window
     }
 }
 
-// end namespace MercyEditor.GameProject
+// end namespace MercyEditor.ProjectBrowser

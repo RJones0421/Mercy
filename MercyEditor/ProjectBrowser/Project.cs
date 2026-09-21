@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MercyEditor.GameProject;
+namespace MercyEditor.ProjectBrowser;
 
 [DataContract(Name = "Game")]
 public class Project : ViewModelBase
