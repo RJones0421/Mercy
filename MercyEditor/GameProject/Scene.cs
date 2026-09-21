@@ -26,6 +26,21 @@ public class Scene : ViewModelBase
         }
     }
 
+    private bool _isActive;
+    [DataMember]
+    public bool IsActive
+    {
+        get => _isActive;
+        set
+        {
+            if (_isActive != value)
+            {
+                _isActive = value;
+                OnPropertyChanged(nameof(IsActive));
+            }
+        }
+    }
+
     [DataMember]
     public Project Project { get; private set; } = null!;
 
