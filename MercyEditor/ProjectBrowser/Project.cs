@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace MercyEditor.ProjectBrowser;
 
@@ -42,10 +43,20 @@ public class Project : ViewModelBase
 
     public static Project? Current => Application.Current.MainWindow.DataContext as Project;
 
+    public static UndoRedo UndoRedoManager { get; } = new UndoRedo();
+
+    public ICommand Undo { get; private set; }
+    public ICommand Redo { get; private set; }
+
+    public ICommand AddScene { get; private set; }
+    public ICommand RemoveScene { get; private set; }
+
     public Project(string name, string path)
     {
         Name = name;
         Path = path;
+
+
 
         OnDeserialized(new StreamingContext());
     }
@@ -76,5 +87,63 @@ public class Project : ViewModelBase
         }
 
         ActiveScene = Scenes.FirstOrDefault(x => x.IsActive);
+
+        AddScene = new RelayCommand<object>(x =>
+        {
+            if (_scenes == null)
+            {
+                return;
+                // TODO: properly log error
+            }
+
+            AddScene_Internal($"New Scene {_scenes.Count}");
+            Scene? newScene = _scenes.Last();
+            int sceneIndex = _scenes.Count - 1;
+
+            if (newScene == null)
+            {
+                return;
+                // TODO: properly log error
+            }
+
+            UndoRedoManager.Add(new UndoRedoAction(
+                () => { RemoveScene_Internal(newScene); },
+                () => { _scenes.Insert(sceneIndex, newScene); },
+                $"Add {newScene.Name}"
+                ));
+        });
+
+        RemoveScene = new RelayCommand<Scene>(x =>
+        {
+            if (_scenes == null)
+            {
+                return;
+                // TODO: properly log error
+            }
+
+            int sceneIndex = _scenes.IndexOf(x);
+            RemoveScene_Internal(x);
+
+            UndoRedoManager.Add(new UndoRedoAction(
+                () => { _scenes.Insert(sceneIndex, x); },
+                () => { RemoveScene_Internal(x); },
+                $"Remove {x.Name}"
+                ));
+        }, x => !x.IsActive);
+
+        Undo = new RelayCommand<object>(x => UndoRedoManager.Undo());
+        Redo = new RelayCommand<object>(x => UndoRedoManager.Redo());
+    }
+
+    private void AddScene_Internal(string sceneName)
+    {
+        Debug.Assert(!string.IsNullOrEmpty(sceneName.Trim()));
+        _scenes.Add(new Scene(this, sceneName));
+    }
+
+    private void RemoveScene_Internal(Scene scene)
+    {
+        Debug.Assert(_scenes.Contains(scene));
+        _scenes.Remove(scene);
     }
 }
